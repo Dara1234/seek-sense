@@ -3,7 +3,7 @@ const app = new Express()
 var index = require('../routes/index');
 var voiceVerification = require('../routes/voiceVerification');
 var updatingEarning = require('../routes/updatingEarning');
-
+var offense = require('../routes/offense');
 const port = process.env.PORT || 3000
 
 app.use(function (req, res, next) {
@@ -14,6 +14,7 @@ app.use(function (req, res, next) {
 app.use('/', index);
 app.use('/voiceVerification', voiceVerification);
 app.use('/updatingEarning', updatingEarning);
+app.use('/offense', offense);
 
 // Log percolated errors to the console
 app.on('error', err => {
